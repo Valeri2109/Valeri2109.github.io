@@ -1,0 +1,226 @@
+@import 'normalize.scss';
+
+//== Mixins ===
+@mixin font-lato {
+  font-family: 'Lato', sans-serif;
+}
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+// == /Mixins ==
+
+// == Variables ==
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// == Common ==
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-lato;
+}
+
+.section-outer {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.section-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+// == header ==
+
+.section-header {
+  color: #ffffff;
+  background: url('../img/Design.jpg') no-repeat 50% 50%;
+  background-size: cover;
+
+  .section-inner {
+    height: 100vh;
+    z-index: 10;
+    postition: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  &-logo {
+    font-weight: bold;
+    font-size: 24px;
+    flex-shink: 1;
+    padding-top: 35px;
+    width: 50%;
+  }
+
+  &-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  &-wrapper {
+    margin: 0 auto;
+    &_title {
+      text-align: center;
+      font-weigth: bold;
+      font-size: 56px;
+      line-length: 60px;
+      margin-bottom: 16px;
+    }
+    &_subtitle {
+      @include font-montserrat;
+
+      text-align: center;
+      text-weight: light;
+      text-size: 18;
+      line-lenght: 32;
+      width: 80%;
+      margin: 0 auto 44px;
+
+    }
+    &_form {
+      display: flex;
+      &-input {
+        flex: 1;
+        padding-right: 40px;
+
+        input {
+          @include font-montserrat;
+
+          border: none;
+          margin: 0px;
+          padding: 16px 20px;
+          background: rgba(255, 255, 255, .25);
+          color: #ffffff;
+          font-size: 16px;
+          outline: none;
+          border-radius: 4px;
+          width: 100%;
+
+
+          &::placeholder {
+            color: #ffffff;
+          }
+        }
+      }
+      &-button {
+        button {
+          @include font-montserrat;
+
+          text-decoration: none;
+          cursor: pointer;
+          color: linear-gradient(to right, #FFD4B7, #ffc98c);
+          font-size: 16px;
+          margin: 0px;
+          padding: 16px 20px;
+          border: none;
+          background: #ffffff;
+          outline: none;
+          border-radius: 4px;
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: $screen-sm) {
+        flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+// == Free ==
+.section-free {
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(to bottom, rgba(23, 126, 126, 0.47), #ffc98c);
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  &_title {
+    font-weight: bold;
+    font-size: 66px;
+    line-weight: 60px;
+    margin-bottom: 26px;
+
+  }
+  &_description {
+    @include font-montserrat;
+
+    text-align: center;
+    text-weight: light;
+    text-size: 18;
+    line-lenght: 32;
+    width: 80%;
+    margin: 0 auto 44px;
+
+  }
+  &_button {
+
+    a {
+      @include font-montserrat;
+
+      text-decoration: none;
+      cursor: pointer;
+      color: linear-gradient(to right, #FFD4B7, #ffc98c);
+      font-size: 16px;
+      margin: 0px;
+      padding: 16px 20px;
+      border: none;
+      background: #ffffff;
+      outline: none;
+      border-radius: 4px;
+      display: inline-block;
+    }
+  }
+}
+
+// == Footer ==
+.section-footer {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  background: linear-gradient(to bottom, #fdca90, rgba(23, 126, 126, 0.47));
+  &_logo {
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+  }
+  &_nav {
+    display: flex;
+    justify-content: center;
+
+    li {
+      list-style: none;
+      @media (max-width: screen-sm-max) {
+        margin-left: 30px;
+      }
+
+      & + li {
+        margin-left: 40px;
+
+      }
+      a {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: light;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+
+        &.active{
+          color: #ffc98c;
+        }
+
+
+      }
+    }
+  }
+}
